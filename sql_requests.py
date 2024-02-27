@@ -33,9 +33,9 @@ def verifypw(username, password):
     result = connection.execute("SELECT password FROM [dbo].[Users] WHERE username = '"+username+"';")
     rows = result.fetchall()
     if rows == password:
-        return 1
+        return True
     else:
-        return 0
+        return False
 
 def getDashboard():
     engine = sqlalchemy.create_engine("mssql+pyodbc:///?odbc_connect=Driver={ODBC Driver 18 for SQL Server};Server=tcp:boschhackathon.database.windows.net,1433;Database=HyperMilingDB;Uid=bosch-hackathon;Pwd={aEVcmVBt2mfvRLZKh3};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;")
