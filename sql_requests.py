@@ -57,7 +57,7 @@ def http_trigger(req: func.HttpRequest) -> func.HttpResponse:
         else:
             name = req_body.get('name')
 
-    score = getScore("mssql+pyodbc:///?odbc_connect=Driver={ODBC Driver 18 for SQL Server};Server=tcp:boschhackathon.database.windows.net,1433;Database=HyperMilingDB;Uid=bosch-hackathon;Pwd={aEVcmVBt2mfvRLZKh3};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;")
+    score = getScore(Mustermann)
 
     if name:
         return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
